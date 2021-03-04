@@ -1,44 +1,64 @@
 import React from 'react';
-import { useState, useEffect } from 'react';
+import { useReducer, useEffect } from 'react';
 import axios from 'axios';
 
+const initialState = {
+  articles: [],
+  loading: true,
+  error: false,
+};
+
+const reducer = (state, action) => {
+  switch (action.type) {
+    case 'FETCH_SUCCESS':
+      return {
+        loading: false,
+        articles: action.payload,
+        error: false,
+      };
+    case 'FETCH_ERROR':
+      return {
+        loading: false,
+        error: action.payload,
+        articles: [],
+      };
+    default:
+      return state;
+  }
+};
+
 const ListArticles = () => {
-  const [articles, setArticles] = useState([]);
+  const [state, dispatch] = useReducer(reducer, initialState);
 
   // fetch data
 
+  const fetchData = async () => {
+    try {
+      const response = await axios.get(
+        'https://newsapi.org/v2/top-headlines?country=us&apiKey=ae78270a03ee4563909ff5b718228bd7'
+      );
+      const data = response.data.articles;
+      dispatch({ type: 'FETCH_SUCCESS', payload: data });
+    } catch (err) {
+      dispatch({ type: 'FETCH_ERROR', payload: err.message });
+    }
+  };
+
   useEffect(() => {
-    console.log('chce załadować dane');
+    fetchData();
   }, []);
-  // const getData = async () => {
-  //   const response = await fetch(
-  //     'https://newsapi.org/v2/top-headlines?country=us&apiKey=ae78270a03ee4563909ff5b718228bd7',
-  //     // 'https://newsapi.org/v2/everything?q=morawiecki&apiKey=ae78270a03ee4563909ff5b718228bd7',
-  //     {
-  //       method: 'GET',
-  //       // headers: {
-  //       //   'x-rapidapi-key':
-  //       //     '2dad272f2bmsh218b44d9b7874a6p1bcef1jsn0a61d3a434a6',
-  //       //   'x-rapidapi-host': 'community-hacker-news-v1.p.rapidapi.com',
-  //       // },
-  //     }
-  //   );
 
-  //   const data = await response.json();
-  //   // setArticles(data);
-  //   console.log(response);
-  // };
+  const { loading, articles, error } = state;
 
-  // getData().then((data) => {
-  //   console.log(data.articles);
-  //   let template = '';
-
-  //   data.map((article) => {
-  //     template = `<div>${article.author}</div>`;
-  //   });
-  // });
-
-  return <div>Here will be list of articles</div>;
+  return (
+    <>
+      <div>
+        {loading && <p>Loading data...</p>}
+        {error && <p>There is a server problem, please try again later</p>}
+        {!articles.length == 0 && articles[0].author}
+      </div>
+    </>
+  );
 };
 
 export default ListArticles;
