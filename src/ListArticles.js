@@ -50,13 +50,33 @@ const ListArticles = () => {
 
   const { loading, articles, error } = state;
 
+  console.log(articles);
+
+  const style = {
+    width: '40vw',
+  };
+
   return (
     <>
-      <div>
+      <main>
         {loading && <p>Loading data...</p>}
         {error && <p>There is a server problem, please try again later</p>}
-        {!articles.length == 0 && articles[0].author}
-      </div>
+
+        {!articles.length == 0 &&
+          articles.map((article, index) => (
+            <section key={index}>
+              <div>
+                <img style={style} src={`${article.urlToImage}`} alt='photo' />
+                <small>{article.source.name}</small>
+              </div>
+              <h3>{article.title}</h3>
+              <p>{article.description}</p>
+              <a href={article.url} target='_blank'>
+                Read More
+              </a>
+            </section>
+          ))}
+      </main>
     </>
   );
 };
