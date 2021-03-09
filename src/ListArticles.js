@@ -1,6 +1,7 @@
 import React from 'react';
 import { useReducer, useEffect } from 'react';
 import axios from 'axios';
+import Article from './Article';
 
 const initialState = {
   articles: [],
@@ -35,7 +36,7 @@ const ListArticles = () => {
   const fetchData = async () => {
     try {
       const response = await axios.get(
-        'https://newsapi.org/v2/top-headlines?country=us&apiKey=ae78270a03ee4563909ff5b718228bd7'
+        `https://newsapi.org/v2/top-headlines?country=gb&apiKey=${process.env.REACT_APP_API_KEY}`
       );
       const data = response.data.articles;
       dispatch({ type: 'FETCH_SUCCESS', payload: data });
@@ -52,10 +53,6 @@ const ListArticles = () => {
 
   console.log(articles);
 
-  const style = {
-    width: '40vw',
-  };
-
   return (
     <>
       <main>
@@ -64,17 +61,7 @@ const ListArticles = () => {
 
         {!articles.length == 0 &&
           articles.map((article, index) => (
-            <section key={index}>
-              <div>
-                <img style={style} src={`${article.urlToImage}`} alt='photo' />
-                <small>{article.source.name}</small>
-              </div>
-              <h3>{article.title}</h3>
-              <p>{article.description}</p>
-              <a href={article.url} target='_blank'>
-                Read More
-              </a>
-            </section>
+            <Article article={article} index={index} />
           ))}
       </main>
     </>
