@@ -1,5 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import '../index.css';
 
 export default function Navbar() {
   return (
@@ -22,8 +23,13 @@ export default function Navbar() {
               </NavLink>
             </li>
             <li>
-              <NavLink to='technology' activeStyle={{ color: 'red' }}>
+              <NavLink to='/technology' activeStyle={{ color: 'red' }}>
                 Technologie
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to='/articles-for-later' activeStyle={{ color: 'red' }}>
+                Artykuły zapisane
               </NavLink>
             </li>
           </ul>

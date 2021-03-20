@@ -31,11 +31,14 @@ code {
 header .container::before {
   /* content: '\f41b'; */
   content: '\f39e';
-  display: inline-block;
-  color: var(--navcolor);
-  color: green;
+  font-weight: 900;
   font-family: 'Font Awesome 5 Free';
-  font-weight: 600;
+  /* color: var(--navcolor); */
+  color: green;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
 }
 
 header .container {
