@@ -9,12 +9,11 @@ function App() {
       <div className='App'>
         <Navbar />
         <Switch>
-          <Route exact path='/:category?'>
-            <ListArticles />
-          </Route>
-          <Route exact path='/articles-for-later'>
+          <Route path='/articles-for-later'>
             <ArticlesForLater />
-            <div>Tutaj będą twoje zapisane artykuły</div>
+          </Route>
+          <Route path='/:category?'>
+            <ListArticles />
           </Route>
         </Switch>
       </div>
