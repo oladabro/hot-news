@@ -9,7 +9,11 @@ function Article({ article }) {
     <article className='article'>
       <div className='article-img'>
         {article.urlToImage == null ? (
-          <img style={style} src={require('../images/news.jpg').default} />
+          <img
+            style={style}
+            src={require('../images/news.jpg').default}
+            alt='photo'
+          />
         ) : (
           <img style={style} src={`${article.urlToImage}`} alt='photo' />
         )}
@@ -20,7 +24,12 @@ function Article({ article }) {
         <p>{article.publishedAt.slice(0, 10)}</p>
         <p>{article.description}</p>
 
-        <a href={article.url} target='_blank' className='read-more'>
+        <a
+          href={article.url}
+          target='_blank'
+          className='read-more'
+          rel='noopener noreferrer'
+        >
           Read More
         </a>
       </div>

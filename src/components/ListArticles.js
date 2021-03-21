@@ -73,7 +73,7 @@ const ListArticles = () => {
         {loading && <p>Loading data...</p>}
         {error && <p>There is a server problem, please try again later</p>}
 
-        {!articles.length == 0 &&
+        {!articles.length === 0 &&
           articles.map((article, index) => (
             <Article article={article} key={index} />
           ))}
