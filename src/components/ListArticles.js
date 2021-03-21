@@ -34,6 +34,7 @@ const reducer = (state, action) => {
 const ListArticles = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
   const { category } = useParams();
+  // const [position, setPosition] = useState[(0, 0)];
 
   // fetch data
 
@@ -59,6 +60,7 @@ const ListArticles = () => {
 
   useEffect(() => {
     fetchData(category);
+    window.scrollTo(0, 0);
   }, [category]);
 
   const { loading, articles, error } = state;

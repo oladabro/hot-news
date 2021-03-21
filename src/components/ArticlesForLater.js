@@ -1,10 +1,15 @@
 import React from 'react';
+import { useEffect } from 'react';
 
 export default function ArticlesForLater() {
   console.log('akuku');
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
-    <div>
-      <h3>Tu będą twoje zapisane artykuły</h3>
+    <div className='for-later'>
+      <h1>Tu będą twoje zapisane artykuły</h1>
     </div>
   );
 }
