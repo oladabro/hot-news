@@ -34,7 +34,6 @@ const reducer = (state, action) => {
 const ListArticles = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
   const { category } = useParams();
-  // const [position, setPosition] = useState[(0, 0)];
 
   // fetch data
 
@@ -65,15 +64,13 @@ const ListArticles = () => {
 
   const { loading, articles, error } = state;
 
-  console.log(articles);
-
   return (
     <>
       <main className='container'>
         {loading && <p>Loading data...</p>}
         {error && <p>There is a server problem, please try again later</p>}
 
-        {!articles.length === 0 &&
+        {!articles.length == 0 &&
           articles.map((article, index) => (
             <Article article={article} key={index} />
           ))}

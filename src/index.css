@@ -14,13 +14,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.container {
-  background-color: #ffffff;
-  width: 90vw;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
 /* styling header */
 
 header {
@@ -65,59 +58,9 @@ nav ul li:hover {
 
 /* styliing articles */
 
-.article {
-  padding: 30px;
-  display: flex;
-  width: 100%;
-  margin: 50px auto;
-  border-radius: 17px;
-  box-shadow: 5px 5px 20px 0px #ddd;
-  /* box-shadow: 4px 4px 25px -5px #ddd; */
-}
-.article-img {
-  margin-right: 40px;
-  width: 30vw;
-  border-radius: 10px;
-}
-
-.article-img p {
-  font-size: 0.8em;
-  font-weight: 300;
-}
-.article-description {
-  width: 65%;
-  position: relative;
-  min-height: 200px;
-}
-
 /* .article-description h3 {
   color: #4d4d4d;
 } */
-
-.article-description p:first-of-type {
-  font-size: 0.8rem;
-  margin: 10px 0;
-}
-
-.article-description p:nth-of-type(2) {
-  line-height: 1.4rem;
-  margin-bottom: 1.1rem;
-}
-
-.read-more {
-  text-decoration: none;
-  background-color: var(--primaryColor);
-  color: #ffffff;
-  padding: 10px 15px;
-  position: absolute;
-  bottom: 1.1rem;
-  border-radius: 3px;
-  transition: 0.2s ease-in-out;
-}
-
-.read-more:hover {
-  transform: scale(1.1);
-}
 
 .link {
   text-decoration: none;
@@ -143,4 +86,68 @@ nav ul li:hover {
 
 .link:nth-of-type(1) {
   white-space: pre-wrap;
+}
+
+/* ----------------------------------- */
+
+main.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.container {
+  background-color: #ffffff;
+  width: 95vw;
+  margin: 0 auto;
+}
+
+.article {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  width: 100%;
+  margin: 1.5rem auto;
+  border-radius: 17px;
+  box-shadow: 5px 5px 20px 0px #ddd;
+}
+
+.article-img p {
+  font-size: 0.8em;
+  font-weight: 300;
+}
+
+.article-description {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+.article h4 {
+  margin-top: 0.8rem;
+  line-height: 1.3rem;
+  font-size: 0.8rem;
+}
+.article-description p:first-of-type {
+  font-size: 0.8rem;
+  margin: 10px 0;
+}
+
+.article-description p:nth-of-type(2) {
+  line-height: 1.2rem;
+  font-size: 0.8rem;
+  margin-bottom: 15px;
+  flex-grow: 1;
+}
+
+.read-more {
+  text-decoration: none;
+  background-color: var(--primaryColor);
+  color: #ffffff;
+  padding: 10px 15px;
+  border-radius: 3px;
+  transition: 0.2s ease-in-out;
+  align-self: flex-start;
+}
+
+.read-more:hover {
+  transform: scale(1.1);
 }
