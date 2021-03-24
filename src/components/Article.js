@@ -1,4 +1,5 @@
 import React from 'react';
+import './Article.css';
 
 function Article({ article }) {
   const style = {
@@ -7,8 +8,8 @@ function Article({ article }) {
 
   return (
     <article className='article'>
-      <div className='article-img'>
-        <p>Źródło: {article.source.name}</p>
+      <figure className='article-img'>
+        <figcaption>Źródło: {article.source.name}</figcaption>
         {article.urlToImage == null ? (
           <img
             style={style}
@@ -22,7 +23,7 @@ function Article({ article }) {
             alt={article.source.name}
           />
         )}
-      </div>
+      </figure>
       <div className='article-description'>
         <h4>{article.title}</h4>
         <p>{article.publishedAt.slice(0, 10)}</p>
