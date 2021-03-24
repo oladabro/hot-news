@@ -1,26 +1,31 @@
 import React from 'react';
+import './Article.css';
 
 function Article({ article }) {
   const style = {
     width: '100%',
   };
-  console.log(article.urlToImage);
+
   return (
     <article className='article'>
-      <div className='article-img'>
+      <figure className='article-img'>
+        <figcaption>Źródło: {article.source.name}</figcaption>
         {article.urlToImage == null ? (
           <img
             style={style}
             src={require('../images/news.jpg').default}
-            alt='photo'
+            alt={article.source.name}
           />
         ) : (
-          <img style={style} src={`${article.urlToImage}`} alt='photo' />
+          <img
+            style={style}
+            src={`${article.urlToImage}`}
+            alt={article.source.name}
+          />
         )}
-        <p>{article.source.name}</p>
-      </div>
+      </figure>
       <div className='article-description'>
-        <h3>{article.title}</h3>
+        <h4>{article.title}</h4>
         <p>{article.publishedAt.slice(0, 10)}</p>
         <p>{article.description}</p>
 

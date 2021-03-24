@@ -8,17 +8,22 @@
   --primaryColor: rgba(39, 151, 95, 255);
 }
 
+@media (max-width: 768px) {
+  html {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 1023px) {
+  html {
+    font-size: 18px;
+  }
+}
+
 body {
   font-family: 'Raleway', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-.container {
-  background-color: #ffffff;
-  width: 90vw;
-  max-width: 1200px;
-  margin: 0 auto;
 }
 
 /* styling header */
@@ -33,105 +38,15 @@ header {
   z-index: 2;
 }
 
-/* header .container div:first-of-type::before {
-  content: '\f39e';
-  display: inline;
-  font-weight: 900;
-  font-family: 'Font Awesome 5 Free';
-  font-style: normal;
-  font-variant: normal;
-  text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-} */
-
 header .container {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-nav ul {
-  display: flex;
-}
-
-nav ul li {
-  list-style: none;
-  margin-left: 15px;
-  transition: all 0.2s ease-in-out;
-}
-nav ul li:hover {
-  transform: scale(1.1);
-}
-
-/* styliing articles */
-
-.article {
-  padding: 30px;
-  display: flex;
-  width: 100%;
-  margin: 50px auto;
-  border-radius: 17px;
-  box-shadow: 5px 5px 20px 0px #ddd;
-  /* box-shadow: 4px 4px 25px -5px #ddd; */
-}
-.article-img {
-  margin-right: 40px;
-  width: 30vw;
-  border-radius: 10px;
-}
-
-.article-img p {
-  font-size: 0.8em;
-  font-weight: 300;
-}
-.article-description {
-  width: 65%;
-  position: relative;
-  min-height: 200px;
-}
-
-/* .article-description h3 {
-  color: #4d4d4d;
-} */
-
-.article-description p:first-of-type {
-  font-size: 0.8rem;
-  margin: 10px 0;
-}
-
-.article-description p:nth-of-type(2) {
-  line-height: 1.4rem;
-  margin-bottom: 1.1rem;
-}
-
-.read-more {
-  text-decoration: none;
-  background-color: var(--primaryColor);
-  color: #ffffff;
-  padding: 10px 15px;
-  position: absolute;
-  bottom: 1.1rem;
-  border-radius: 3px;
-  transition: 0.2s ease-in-out;
-}
-
-.read-more:hover {
-  transform: scale(1.1);
-}
-
-.link {
-  text-decoration: none;
-  color: #2b2929;
-  font-size: 1.1rem;
-  font-weight: 600;
-}
-/* .link:hover {
-  transform: scale(1.1);
-} */
-
-.link-selected {
-  color: var(--primaryColor);
-  text-decoration: none;
+.react-icon {
+  margin-right: 10px;
+  font-size: 1.5rem;
 }
 
 .for-later {
@@ -143,4 +58,18 @@ nav ul li:hover {
 
 .link:nth-of-type(1) {
   white-space: pre-wrap;
+}
+
+/* ----------burger menu */
+@media (min-width: 768px) {
+  .burger {
+    display: none;
+  }
+}
+
+/* ----------------------- */
+.container {
+  background-color: #ffffff;
+  width: 95vw;
+  margin: 0 auto;
 }
