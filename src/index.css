@@ -8,68 +8,23 @@
   --primaryColor: rgba(39, 151, 95, 255);
 }
 
-@media (max-width: 768px) {
-  html {
-    font-size: 20px;
-  }
-}
-
-@media (max-width: 1023px) {
-  html {
-    font-size: 18px;
-  }
-}
-
 body {
   font-family: 'Raleway', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* styling header */
-
-header {
-  position: sticky;
-  top: 0;
-  box-shadow: 5px 5px 20px 0px #ddd;
+.container {
   background-color: #ffffff;
-  display: flex;
-  align-items: center;
-  z-index: 2;
+  width: 95vw;
+  margin: 0 auto;
 }
 
-header .container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.react-icon {
-  margin-right: 10px;
-  font-size: 1.5rem;
-}
+/* tab articles for later */
 
 .for-later {
   height: 100vh;
   display: flex;
   justify-content: center;
   margin-top: 2rem;
-}
-
-.link:nth-of-type(1) {
-  white-space: pre-wrap;
-}
-
-/* ----------burger menu */
-@media (min-width: 768px) {
-  .burger {
-    display: none;
-  }
-}
-
-/* ----------------------- */
-.container {
-  background-color: #ffffff;
-  width: 95vw;
-  margin: 0 auto;
 }

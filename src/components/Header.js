@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import '../index.css';
+import './Header.css';
 import Navbar from './Navbar';
 import { FaReact } from 'react-icons/fa';
 
