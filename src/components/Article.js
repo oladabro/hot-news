@@ -35,7 +35,7 @@ function Article({ article }) {
           className='read-more'
           rel='noopener noreferrer'
         >
-          Read More
+          Czytaj dalej
         </a>
       </div>
     </article>

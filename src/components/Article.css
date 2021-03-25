@@ -49,6 +49,7 @@ figcaption {
   border-radius: 3px;
   transition: 0.2s ease-in-out;
   align-self: flex-start;
+  font-size: 0.8rem;
 }
 
 .read-more:hover {
@@ -59,6 +60,10 @@ figcaption {
   main.container {
     display: grid;
     grid-template-columns: 1fr;
+  }
+
+  .read-more {
+    font-size: 0.9rem;
   }
 
   .article {
