@@ -2,7 +2,7 @@
 
 ## Features:
 
-- fetching articles from NewsApi: https://newsapi.org/docs/endpoints/top-headlines]
+- fetching articles from NewsApi: https://newsapi.org/docs/endpoints/top-headlines
 - additional sections:
   - Business
   - Health
