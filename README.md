@@ -15,6 +15,11 @@
 - React-router
 - Axios
 
+## To do
+
+- add pagination to front page
+- add articles save for later
+
 ### Desktop view
 
 <img src="src/images/project-img-1.jpg">
